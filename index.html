@@ -7,6 +7,7 @@
   <link rel="icon" href="Washer.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <title>Cityu Laundry Status</title>
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -23,23 +24,31 @@
     </select>
   </div>
   
-  <div class="machine-section">
-    <div class="section-header dryer-header">Dryers</div>
-    <div id="dryer-container" class="machine-container"></div>
-  </div>
+  <div class="laundry" style="display: none;">
+    <div class="machine-section">
+      <div class="section-header dryer-header">Dryers</div>
+      <div id="dryer-container" class="machine-container"></div>
+    </div>
   
-  <div class="machine-section">
-    <div id="washer-container" class="machine-container"></div>
-    <div class="section-header washer-header">Washers</div>
+    <div class="machine-section">
+      <div id="washer-container" class="machine-container"></div>
+      <div class="section-header washer-header">Washers</div>
+    </div>
+  </div>
+
+  <div class="loading" style="text-align: center;">
+    <a>Load緊</a>
+    <br>
+    <img src = "chipi-chipi-chipi.gif">
   </div>
 </div>
 
 <div class = footer style="padding-top: 500px !important">
-  From Hall 10 505b
+  <a id="countdown"></a>
+  <br>
+  <a>By Hall 10 505b</a>
 </div>
 
 
-
-<script src="script.js"></script>
 </body>
 </html>
