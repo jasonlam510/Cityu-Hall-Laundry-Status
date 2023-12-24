@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="washer.png" type="image/png">
+  <title>Cityu Laundry Status</title>
+</head>
+<body>
+
+<div class="header">
+  <h1>Cityu Hall</h1>
+  <h2>Laundry Status</h2>
+</div>
+
+<div class="body">
+  <div class="hall-selection">
+    <label for="hallNo">Select Hall: </label>
+    <select id="hallNo">
+      <!-- Options will be populated by JavaScript -->
+    </select>
+  </div>
+  
+  <div class="machine-section">
+    <div class="section-header dryer-header">Dryers</div>
+    <div id="dryer-container" class="machine-container"></div>
+  </div>
+  
+  <div class="machine-section">
+    <div id="washer-container" class="machine-container"></div>
+    <div class="section-header washer-header">Washers</div>
+  </div>
+</div>
+
+<div class = footer style="padding-top: 500px !important">
+  From Hall 10 505b
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

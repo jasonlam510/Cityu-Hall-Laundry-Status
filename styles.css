@@ -1,0 +1,102 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #a30059;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hall-selection {
+  text-align: center; /* Center align the content */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+.hall-selection select {
+  margin-left: 10px; /* Space between label and dropdown */
+}
+
+.section-header {
+  background-color: #ddd;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.machine-container {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 120px; /* Fixed width for each machine */
+  text-align: center; /* Center the text */
+}
+
+.machine img {
+  width: 50px; /* Adjust size as needed */
+  margin-bottom: 10px;
+}
+
+.status {
+  margin-top: 5px;
+  font-weight: bold; /* Make "In Use" bold */
+  text-align: center; /* Center the text */
+}
+
+.time-left {
+  width: 100%; /* Ensure the time left takes the full width of the container */
+  text-align: center; /* Center the text horizontally */
+  font-size: 0.9em; /* Optionally, make the font size smaller for the time left */
+  color: #555; /* Optionally, change the color to indicate less importance */
+}
+
+.in-use-filter img {
+  filter: grayscale(100%); /* Apply a grey filter */
+}
+
+/* Responsive styles for screens with max-width of 600px */
+@media (max-width: 600px) {
+  .header{
+    padding: 0px;
+    margin: 0px;
+  }
+
+  *{
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 0.98em;
+  }
+
+  .hall-selection, .machine-section, .section-header {
+    padding: 5px; /* Reduced padding */
+    margin: 5px;
+  }
+
+  .machine-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align machines from left to right */
+    padding: 3px !important;
+    margin: 3px !important;
+  }
+
+  .machine {
+    width: 95px; /* Smaller width for machine blocks */
+  }
+
+  .machine img {
+    width: 40px; /* Smaller image size */
+  }
+}
