@@ -88,12 +88,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* Align machines from left to right */
+    padding: 3px !important;
+    margin: 3px !important;
   }
 
   .machine {
     width: 95px; /* Smaller width for machine blocks */
-    margin-bottom: 5px !important;
-    margin-top: 5px !important;
   }
 
   .machine img {

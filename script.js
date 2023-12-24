@@ -2,11 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const dryerContainer = document.getElementById('dryer-container');
   const washerContainer = document.getElementById('washer-container');
   const hallNoSelect = document.getElementById('hallNo');
-  const reloadTime = 10
-  let countdown = reloadTime;
-  const countdownElement = document.getElementById('countdown');
-  const loadingEle = document.getElementsByClassName("loading")
-  const landry = document.getElementsByClassName("laundry")
 
   // Populate the dropdown with options for halls 1 to 11
   for (let i = 1; i <= 11; i++) {
@@ -36,30 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  function updateCountdown() {
-    countdownElement.textContent = `${countdown}s to reload`;
-    countdown -= 1;
-  
-    if (countdown < 0) {
-      countdown = 10;
-    }
-  }
-
-  function startLoading() {
-    loadingEle[0].style.display = "block";
-    landry[0].style.display = "none";
-  }
-
-  function endLoading() {
-    loadingEle[0].style.display = "none";
-    landry[0].style.display = "block";
-  }
-
   function updateLaundryStatus(data) {
-    console.log(data)
-    endLoading()
     dryerContainer.innerHTML = '';
     washerContainer.innerHTML = '';
+    
     data.forEach(machine => {
       const machineElem = document.createElement('div');
       machineElem.className = 'machine';
@@ -95,28 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
         dryerContainer.appendChild(machineElem);
       }
     });
-    countdown = reloadTime;
   }
 
-  hallNoSelect.addEventListener('change', function(event) {
-    const selectedHallNo = event.target.value;
-    if (history.pushState) {
-      const newurl = new URL(window.location.href);
-      newurl.searchParams.set('HallNo', selectedHallNo); // Set the HallNo parameter
-      window.history.pushState({ path: newurl.href }, '', newurl.href);
-    }
-    startLoading();
-    fetchLaundryData(); // Fetch data for the selected hall
-  });
-
-  
-  
-  // Update the countdown every second
-  setInterval(updateCountdown, reloadTime/10 * 1000);
-
-  // Fetch laundry data every 10 seconds
-  setInterval(fetchLaundryData, reloadTime * 1000);
+  hallNoSelect.addEventListener('change', fetchLaundryData);
 
   // Initial fetch
   fetchLaundryData();
+  
 });
