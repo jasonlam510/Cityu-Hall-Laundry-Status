@@ -1,3 +1,5 @@
+const zfill = (num, size) => num < 10 ? `0${num}` : num;
+
 document.addEventListener('DOMContentLoaded', function() {
   const dryerContainer = document.getElementById('dryer-container');
   const washerContainer = document.getElementById('washer-container');
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Populate the dropdown with options for halls 1 to 11
   for (let i = 1; i <= 11; i++) {
     const option = document.createElement('option');
-    option.value = i < 10 ? `0${i}` : `${i}`;
+    option.value = zfill(i, 2);
     option.textContent = i;
     hallNoSelect.appendChild(option);
   }
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   const hallNoParam = urlParams.get('HallNo');
   if (hallNoParam && hallNoParam >= 1 && hallNoParam <= 11) {
-    hallNoSelect.value = hallNoParam < 10 ? `0${hallNoParam}` : hallNoParam;
+    hallNoSelect.value = zfill(hallNoParam, 2);
   }
 
   function fetchLaundryData() {
