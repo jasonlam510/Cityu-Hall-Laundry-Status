@@ -1,0 +1,2 @@
+# CityU-Hall-Laundry-Status
+City University of Hong Kong provides an official app to look up which washing machine or dryer is taken or free in each hall, but it needs a cumbersome authentication procedure including Okta Verify. This website is its convenient alternative; it simply retrieves information from the API that the app internally fetches, and shows it to public. Users can look up laundry status with no authentication.
