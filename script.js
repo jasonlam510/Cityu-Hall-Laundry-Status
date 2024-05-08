@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadingEle = document.getElementsByClassName("loading")
   const landry = document.getElementsByClassName("laundry")
 
+  const updateFailureElement = document.getElementById('update-failure');
+  const updateFailureCountElement = document.getElementById('update-failure-count');
+  let updateFailureCount = 0;
+
   // Populate the dropdown with options for halls 1 to 11
   for (let i = 1; i <= 11; i++) {
     const option = document.createElement('option');
@@ -31,9 +35,23 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         updateLaundryStatus(data);
       })
+      .then(() => {
+        resetUpdateFailureCount();
+      })
       .catch(error => {
         console.error('Error fetching laundry data:', error);
+        incrementUpdateFailureCount();
       });
+  }
+
+  function resetUpdateFailureCount() {
+    updateFailureElement.classList.remove('active');
+    updateFailureCount = 0;
+  }
+
+  function incrementUpdateFailureCount() {
+    updateFailureElement.classList.add('active');
+    updateFailureCountElement.textContent = String(++updateFailureCount);
   }
 
   function updateCountdown() {

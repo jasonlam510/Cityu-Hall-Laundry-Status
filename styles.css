@@ -66,6 +66,16 @@ body {
   filter: grayscale(100%); /* Apply a grey filter */
 }
 
+#update-failure {
+  display: none;
+  color: red;
+  text-align: center;
+}
+
+#update-failure.active {
+  display: block;
+}
+
 /* Responsive styles for screens with max-width of 600px */
 @media (max-width: 600px) {
   .header{
