@@ -1,4 +1,8 @@
-const zfill = (num, size) => num < 10 ? `0${num}` : num;
+const zfill = (num, size) => {
+  let s = num + '';
+  while (s.length < size) s = '0' + s;
+  return s;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   const dryerContainer = document.getElementById('dryer-container');
