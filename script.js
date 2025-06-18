@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadingEle = document.getElementsByClassName("loading")
   const landry = document.getElementsByClassName("laundry")
 
-  // Populate the dropdown with options for halls 1 to 11
-  for (let i = 1; i <= 11; i++) {
+  // Populate the dropdown with options for halls 1 to 17, except hall 13
+  for (let i = 1; i <= 17; i++) {
+    if (i == 13) continue;
     const option = document.createElement('option');
     option.value = i < 10 ? `0${i}` : `${i}`;
     option.textContent = i;
