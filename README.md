@@ -1,10 +1,6 @@
-# CityU Hall Laundry Status Dashboard
+# CityU-Hall-Laundry-Status
 
-A simple web dashboard that displays real-time laundry machine status for City University of Hong Kong residence halls, providing an alternative to the official mobile app.
-
-## Motivation
-
-We built this web laundry dashboard because the official way to look up the laundry status is very inefficient. Users often get stuck in a cycle of app updates, SMS verification, and repeated logins just to see the laundry status. This is very inconvenient and the stupid app was the only way to check the status. CityU hall residents need a better way to check the status without using the app.
+City University of Hong Kong provides an official app to look up which washing machine or dryer is taken or free in each hall, but it needs a cumbersome authentication procedure including Okta Verify. This website is its convenient alternative; it simply retrieves information from the API that the app internally fetches, and shows it to public. Users can look up laundry status with no authentication.
 
 ## Features
 
