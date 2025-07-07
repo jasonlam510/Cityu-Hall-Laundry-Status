@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadingEle = document.getElementsByClassName("loading")
   const landry = document.getElementsByClassName("laundry")
 
-  // Populate the dropdown with options for halls 1 to 11
-  for (let i = 1; i <= 11; i++) {
+  // Populate the dropdown with options for halls 1 to 17, except hall 13
+  for (let i = 1; i <= 17; i++) {
+    if (i == 13) continue;
     const option = document.createElement('option');
     option.value = zfill(i, 2);
     option.textContent = i;
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const machineType = machine["Machine Type"] === 'W' ? 'Washer' : 'Dryer';
       const machineID = machineType[0] + parseInt(machine["Machine ID"], 10); // Remove leading zero
       const leftTime = parseInt(machine["Left Time"], 10);
-      const machineImg = machine["Status"] === 'U'? 'Out of Service': machineType;
+      const machineImg = machine["Status"] === 'U'? 'media/Out of Service': `media/${machineType}`;
       let statusText = '';
       let timeLeftText = '';
 
