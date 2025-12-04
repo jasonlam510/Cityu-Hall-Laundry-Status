@@ -13,6 +13,7 @@ City University of Hong Kong provides an official app to look up which washing m
 
 ## TODO
 
+- [ ] Improve the performance.
 - [ ] Add dark mode theme
 - [ ] Add a promotions section (e.g., for hall events, Hall Orientation, etc.)
 - [ ] Build a recommendation system to suggest off-peak laundry times. Requires collecting usage data over time, since no official historical API is available.
