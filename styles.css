@@ -45,7 +45,9 @@ body {
 }
 
 .machine img {
-  width: 50px; /* Adjust size as needed */
+  width: 70px; /* Match HTML attribute for desktop */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Responsive scaling */
   margin-bottom: 10px;
 }
 
@@ -66,7 +68,16 @@ body {
   filter: grayscale(100%); /* Apply a grey filter */
 }
 
-/* Responsive styles for screens with max-width of 600px */
+/* Responsive styles for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .machine img {
+    width: 60px; /* Medium size for tablets */
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Responsive styles for mobile phones (max-width: 600px) */
 @media (max-width: 600px) {
   .header{
     padding: 0px;
@@ -97,6 +108,8 @@ body {
   }
 
   .machine img {
-    width: 40px; /* Smaller image size */
+    width: 40px; /* Smaller image size for mobile */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow */
   }
 }

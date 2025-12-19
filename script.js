@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const machineType = machine["Machine Type"] === 'W' ? 'Washer' : 'Dryer';
       const machineID = machineType[0] + parseInt(machine["Machine ID"], 10); // Remove leading zero
       const leftTime = parseInt(machine["Left Time"], 10);
-      const machineImg = machine["Status"] === 'U'? 'media/Out of Service': `media/${machineType}`;
+      const machineImg = machine["Status"] === 'U'? 'media/Out of Service.png': `media/${machineType.toLowerCase()}-icon.svg`;
       let statusText = '';
       let timeLeftText = '';
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       machineElem.innerHTML = `
         <div class="machine-id">${machineID}</div>
-        <img src="${machineImg}.png" alt="${machineType}" />
+        <img src="${machineImg}" alt="${machineType}" width="70" height="70" />
         <div class="status">${statusText}</div>
         <div class="time-left">${timeLeftText}</div>
       `;
